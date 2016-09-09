@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="15" name="Ulta Web" parallel="tests">
+	
+	<test name="iPhone 6s shared">
+		<parameter name="targetEnvironment" value="iPhone 6s shared" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Ross"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="iPhone 6 Plus">
+		<parameter name="targetEnvironment" value="iPhone 6 Plus" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>	
+		
+	<test name="iPhone 5">
+		<parameter name="targetEnvironment" value="iPhone 5" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="iPad Air 2">
+		<parameter name="targetEnvironment" value="iPad Air 2" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	
+	<test name="iPad Pro">
+		<parameter name="targetEnvironment" value="iPad Pro" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value=""/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	
+	 <test name="iPad Mini">
+		<parameter name="targetEnvironment" value="iPad Mini" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	
+	<test name="Android N">
+		<parameter name="targetEnvironment" value="Android N" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	<!-- 
+	<test name="Galaxy Note Pro">
+		<parameter name="targetEnvironment" value="Galaxy Note Pro" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test> -->
+	
+	<test name="Galaxy S7 Edge">
+		<parameter name="targetEnvironment" value="Galaxy S7 Edge" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Sara"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	
+	<test name="Nexus 5">
+		<parameter name="targetEnvironment" value="Nexus 5" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>
+ 
+	<test name="Galaxy S6">
+		<parameter name="targetEnvironment" value="Android Device" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	
+	<test name="Chrome">
+		<parameter name="targetEnvironment" value="Desktop Chrome" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value=""/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	
+	<test name="Chrome Beta">
+		<parameter name="targetEnvironment" value="Desktop Chrome Beta" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value=""/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test> 
+	
+	<test name="Win7 IE 10">
+		<parameter name="targetEnvironment" value="Desktop Win7 IE10" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value=""/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>
+	
+	<test name="Win7 IE 11">
+		<parameter name="targetEnvironment" value="Desktop Win7 IE11" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value=""/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.UltaWebDataAgnostic">
+				<methods>
+					<include name="agnosticTest"/>
+				</methods>
+			</class>		
+		</classes>
+	</test>  
+
+
+</suite> 

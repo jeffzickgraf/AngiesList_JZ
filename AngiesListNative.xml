@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="11" name="Ulta Native" parallel="tests">
+	
+	<!-- Using personal 6 s for omni-channel -->
+	
+	<test name="Ulta Native - iPhone 6s shared">
+		<parameter name="targetEnvironment" value="iPhone 6s shared" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="NATIVE_APP"/>
+		<classes>			
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+			<class name="test.java.UltaNativeDataAgnosticRoss">
+			    <methods>
+			        <include name="agnosticTestRoss" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Ulta Native - iPhone 6 Plus">
+		<parameter name="targetEnvironment" value="iPhone 6s Plus" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="NATIVE_APP"/>
+		<classes>
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+			<class name="test.java.UltaNativeDataAgnosticRoss">
+			    <methods>
+			        <include name="agnosticTestRoss" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Ulta Native - iPhone 5">
+		<parameter name="targetEnvironment" value="iPhone 5" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="NATIVE_APP"/>
+		<classes>
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test> 
+	<!-- 
+	<test name="Ulta Native  - iPad Air 2">
+		<parameter name="targetEnvironment" value="iPad Air 2" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="NATIVE_APP"/>
+		<classes>
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>	
+	
+	<test name="Ulta Native  - iPad Pro">
+		<parameter name="targetEnvironment" value="iPad Pro" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="NATIVE_APP"/>
+		<classes>
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>	
+	
+	<test name="Ulta Native  - iPad Mini">
+		<parameter name="targetEnvironment" value="iPad Mini" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="context" value="NATIVE_APP"/>
+		<classes>
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>	 -->
+	
+	<!-- <test name="Ulta Native - Android N">
+		<parameter name="targetEnvironment" value="Android N" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="context" value="NATIVE_APP"/>
+		<parameter name="windTunnel" value="Georgia"/>
+		<classes>		
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>
+
+	<test name="Ulta Native - Galaxy Note Pro">
+		<parameter name="targetEnvironment" value="Galaxy Note Pro" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="context" value="NATIVE_APP"/>
+		<parameter name="windTunnel" value="Georgia"/>
+		<classes>		
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test> -->
+	
+	<test name="Ulta Native - Galaxy S7 Edge">
+		<parameter name="targetEnvironment" value="Galaxy S7 Edge" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="context" value="NATIVE_APP"/>
+		<parameter name="windTunnel" value="Georgia"/>
+		<classes>		
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Ulta Native - Nexus 5">
+		<parameter name="targetEnvironment" value="Nexus 5" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="context" value="NATIVE_APP"/>
+		<parameter name="windTunnel" value="Georgia"/>
+		<classes>		
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Ulta Native - Galaxy S6">
+		<parameter name="targetEnvironment" value="Galaxy S6" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="context" value="NATIVE_APP"/>
+		<parameter name="windTunnel" value="Georgia"/>
+		<classes>		
+			<class name="test.java.UltaNativeDataAgnostic">
+			    <methods>
+			        <include name="agnosticTest" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test> 
+
+
+	
+	
+</suite> 
