@@ -31,8 +31,17 @@ public class VerifySearchTests extends SeleniumBase {
 				testStarted = true;
 				openALSite();
 				login();
-				searchAndBasicVerify(searchTerm);			
-				reportiumClient.testStop(TestResultFactory.createSuccess());
+				searchAndBasicVerify(searchTerm);
+				
+				if(windTimerFailed)
+				{
+					reportiumClient.testStop(TestResultFactory.createFailure("One or more wind tunnel timer(s) exceeded.", new Exception("Timer exceeded.")));
+				}
+				else
+				{
+					reportiumClient.testStop(TestResultFactory.createSuccess());
+				}
+				
 				System.out.println("- - Test Completed Successfully " + getDeviceModel());		
 			} catch (NoSuchElementException e){
 				takeSafeScreenshot();
@@ -123,8 +132,8 @@ public class VerifySearchTests extends SeleniumBase {
 			driver.findElementByXPath(ALObjects.WebSearchInput).sendKeys(searchText);
 			driver.findElementByXPath(ALObjects.WebSearchInput).sendKeys(Keys.ENTER);
 			
-			Assert.assertTrue(textCheckpoint("Showing results for " + searchText, Constants.TEXTCHECKWAIT), "Expected to see Showing results for " + searchText);
-			takeWindTunnelTimer("Search Results Returned", 5500);
+			Assert.assertTrue(textCheckpoint("Showing results for " + searchText, 30), "Expected to see Showing results for " + searchText);
+			takeWindTunnelTimer("Search Results Returned", 7500);
 		}
 		
 }

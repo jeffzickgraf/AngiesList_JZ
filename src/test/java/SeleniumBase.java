@@ -53,6 +53,8 @@ public class SeleniumBase extends TestBase {
 		Boolean testStarted = false;
 		String reportKey;
 		Boolean useWindTunnel = true;
+		//This is used as a flag to fail the test if a wind tunnel timer fails.
+		Boolean windTimerFailed = false;
 			
 		@Parameters({ "targetEnvironment", "nvProfile", "context", "windTunnel" })
 		@BeforeTest
@@ -469,9 +471,15 @@ public class SeleniumBase extends TestBase {
 			{
 				try{
 					long uxTimer1 = timerGet("ux");
-					System.out.println("'Measured UX time is: " + uxTimer1);						
+					System.out.println("'Measured UX time is: " + uxTimer1);	
+					
 					// Wind Tunnel: Add timer to Wind Tunnel Report
 					WindTunnelUtils.reportTimer(driver, uxTimer1, timeInMilliseconds, timerText, "uxTimer1");
+					
+					if(uxTimer1 > timeInMilliseconds)
+					{
+						windTimerFailed = true;
+					}
 				}
 				catch(Exception ex)
 				{
