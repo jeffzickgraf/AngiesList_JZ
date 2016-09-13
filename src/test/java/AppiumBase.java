@@ -31,7 +31,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
 import test.resources.Constants;
 import test.resources.Resources;
-import test.resources.UltaObjects;
+import test.resources.ALObjects;
 import test.resources.Constants.OSType;
 
 public class AppiumBase extends TestBase {
@@ -104,7 +104,7 @@ public class AppiumBase extends TestBase {
 				capabilities.setCapability("password", Constants.PASSWORD);			
 				capabilities.setCapability("newCommandTimeout", "120");
 				capabilities.setCapability("automationName", "Appium");
-				capabilities.setCapability("scriptName", "Ulta Appium");
+				capabilities.setCapability("scriptName", "AL Appium");
 				
 				if(windTunnel.toString() != null && !windTunnel.isEmpty())
 				{	
@@ -171,25 +171,18 @@ public class AppiumBase extends TestBase {
 				openApp(context);
 				
 				Thread.sleep(3000);
-				//if the "Rate Ulta" popup appears, dismiss
-				if(isAndroid() && textCheckpoint("Rate ULTA", 6))
+				//if the "Rate AL" popup appears, dismiss
+				if(isAndroid() && textCheckpoint("Rate Angies List", 6))
 				{
 					buttonClick("No Thanks", false, false);
 				}
 				else
 				{
-					if(textCheckpoint("Rate Ulta", 6))
+					if(textCheckpoint("Rate Angies List", 6))
 					{
 						buttonClick("No, Thanks", false, false);
 					}
-				}
-				
-				if(textCheckpoint("OK, Let's See", 5))
-				{
-					buttonClick("Ok, Let's See", false, false);//1st splash
-					buttonClick("Maybe Later", false, false);//2nd splash
-					buttonClick("Maybe Later", false, false);//3rd splash
-				}
+				}				
 			}
 			catch(Exception ex)
 			{
@@ -199,12 +192,12 @@ public class AppiumBase extends TestBase {
 		
 		protected String getTestName()
 		{
-			return "Ulta Native Demo";
+			return "AL Native Demo";
 		}
 	
 		protected String[] getTags(String windTunnel) {
 			List<String> tags = getAdditionalTags(new ArrayList<String>()); 
-			tags.add("Ulta Native");
+			tags.add("AL Native");
 			
 			if(windTunnel.toString() != null && !windTunnel.isEmpty())
 			{				
@@ -418,13 +411,13 @@ public class AppiumBase extends TestBase {
 			return null;
 		}
 	    
-	    protected void openNavMenuIfNeeded()
+	    /*protected void openNavMenuIfNeeded()
 		{
 			if(osType==OSType.ANDROID)
 			{
-				driver.findElementByXPath(UltaObjects.NativeAndroidMenuButton).click();
+				driver.findElementByXPath(ALObjects.NativeAndroidMenuButton).click();
 			}
-		}
+		}*/
 	    
 	    protected Boolean isAndroid()
 	    {

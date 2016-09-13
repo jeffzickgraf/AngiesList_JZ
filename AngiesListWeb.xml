@@ -5,12 +5,12 @@
 	<test name="iPhone 6s shared">
 		<parameter name="targetEnvironment" value="iPhone 6s shared" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Ross"/>
+		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>
 		</classes>
@@ -22,9 +22,9 @@
 		<parameter name="windTunnel" value="Georgia"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>
 		</classes>
@@ -36,9 +36,9 @@
 		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>
 		</classes>
@@ -50,9 +50,9 @@
 		<parameter name="windTunnel" value="Georgia"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -64,9 +64,9 @@
 		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -78,9 +78,9 @@
 		<parameter name="windTunnel" value="Georgia"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -92,27 +92,27 @@
 		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
 	</test>
-	<!-- 
+	
 	<test name="Galaxy Note Pro">
 		<parameter name="targetEnvironment" value="Galaxy Note Pro" />
 		<parameter name="nvProfile" value="none" />
 		<parameter name="windTunnel" value="Georgia"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
-	</test> -->
+	</test>
 	
 	<test name="Galaxy S7 Edge">
 		<parameter name="targetEnvironment" value="Galaxy S7 Edge" />
@@ -120,9 +120,9 @@
 		<parameter name="windTunnel" value="Sara"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -134,9 +134,9 @@
 		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -148,9 +148,9 @@
 		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -162,9 +162,9 @@
 		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -176,9 +176,9 @@
 		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -190,9 +190,9 @@
 		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -204,9 +204,9 @@
 		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
-			<class name="test.java.UltaWebDataAgnostic">
+			<class name="test.java.VerifySearchTests">
 				<methods>
-					<include name="agnosticTest"/>
+					<include name="categorySearchTest"/>
 				</methods>
 			</class>		
 		</classes>

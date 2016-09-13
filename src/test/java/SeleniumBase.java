@@ -177,7 +177,7 @@ public class SeleniumBase extends TestBase {
 				capabilities.setCapability("password", Constants.PASSWORD);			
 				capabilities.setCapability("newCommandTimeout", "120");
 				
-				capabilities.setCapability("scriptName", "Ulta Web");
+				capabilities.setCapability("scriptName", "AL Web");
 						
 				if(windTunnel.toString() != null && !windTunnel.isEmpty() && isMobile && useWindTunnel)
 				{
@@ -203,7 +203,7 @@ public class SeleniumBase extends TestBase {
 				job.setNumber(Integer.parseUnsignedInt(Constants.BUILDNUMBER));
 				
 				PerfectoExecutionContext perfectoExecutionContext = new PerfectoExecutionContext.PerfectoExecutionContextBuilder()
-					.withProject(new Project("Ulta Demo", "1.0"))
+					.withProject(new Project("AL Demo", "1.0"))
 				    .withContextTags(getTags(windTunnel))
 				    .withWebDriver(driver)
 				    .withJob(job)
@@ -237,7 +237,7 @@ public class SeleniumBase extends TestBase {
 		
 		private String[] getTags(String windTunnel) {
 			List<String> tags = getAdditionalTags(new ArrayList<String>()); 
-			tags.add("Ulta Web");
+			tags.add("AL Web");
 			if(windTunnel.toString() != null && !windTunnel.isEmpty() && useWindTunnel && isMobile)
 			{				
 				tags.add(windTunnel);
