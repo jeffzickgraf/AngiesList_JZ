@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="15" name="Ulta Web" parallel="tests">
+<suite thread-count="15" name="AL Web" parallel="tests">
 	
-	<test name="iPhone 6s shared">
+	<test name="iPhone 6s">
+		<parameter name="targetEnvironment" value="iPhone 6s" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value=""/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>
+			<class name="test.java.VerifySearchTests">
+				<methods>
+					<include name="categorySearchTest"/>
+					<include name="keywordSearchTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--
+<test name="iPhone 6s shared">
 		<parameter name="targetEnvironment" value="iPhone 6s shared" />
 		<parameter name="nvProfile" value="none" />
 		<parameter name="windTunnel" value=""/>
@@ -16,7 +32,7 @@
 		</classes>
 	</test>
 
-	<test name="iPhone 6 Plus">
+ 	<test name="iPhone 6 Plus">
 		<parameter name="targetEnvironment" value="iPhone 6 Plus" />
 		<parameter name="nvProfile" value="none" />
 		<parameter name="windTunnel" value="Georgia"/>
@@ -211,6 +227,6 @@
 			</class>		
 		</classes>
 	</test>  
-
+ -->
 
 </suite> 

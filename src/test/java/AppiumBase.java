@@ -329,7 +329,7 @@ public class AppiumBase extends TestBase {
 			}
 		}
 		
-		protected Boolean textCheckpoint(String textToFind, Integer timeout) {
+		public Boolean textCheckpoint(String textToFind, Integer timeout) {
 			perfectoCommand.clear();
 			perfectoCommand.put("content", textToFind);
 			perfectoCommand.put("timeout", timeout);
@@ -339,7 +339,7 @@ public class AppiumBase extends TestBase {
 			return resultBool;
 		}	
 		
-		protected Boolean textCheckpointWithScroll(String textToFind) {
+		public Boolean textCheckpointWithScroll(String textToFind) {
 			perfectoCommand.clear();
 			perfectoCommand.put("content", textToFind);
 			perfectoCommand.put("scrolling", "scroll");
@@ -350,7 +350,7 @@ public class AppiumBase extends TestBase {
 			return resultBool;
 		}	
 		
-		protected void buttonClick(String textToClick, Boolean scroll, Boolean scrollUp ) 
+		public void buttonClick(String textToClick, Boolean scroll, Boolean scrollUp ) 
 		{			
 			perfectoCommand.clear();
 			perfectoCommand.put("label", textToClick);
@@ -367,7 +367,7 @@ public class AppiumBase extends TestBase {
 			perfectoCommand.clear();
 		}
 		
-		protected String getStackTraceAsString(Exception ex)
+		public String getStackTraceAsString(Exception ex)
 		{
 			StringWriter stringWriter = new StringWriter();
 			PrintWriter printWriter = new PrintWriter(stringWriter);
@@ -376,7 +376,7 @@ public class AppiumBase extends TestBase {
 		}
 
 		
-		protected String getDeviceModel()
+		public String getDeviceModel()
 		{
 			Map params = new HashMap<>();         
 			params.put("property", "model");
@@ -385,7 +385,7 @@ public class AppiumBase extends TestBase {
 		}
 		
 		// Wind Tunnel: Gets the user experience (UX) timer
-		protected long timerGet(String timerType) {
+		public long timerGet(String timerType) {
 			 String command = "mobile:timer:info";
 			 Map<String,String> params = new HashMap<String,String>();
 			 params.put("type", timerType);
@@ -395,7 +395,7 @@ public class AppiumBase extends TestBase {
 	    
 		//Wrapping in try catch so we can continue execution if it fails.
 		@Attachment
-	    protected byte[] takeSafeScreenshot()
+		public byte[] takeSafeScreenshot()
 		{
 			try
 			{
@@ -419,14 +419,14 @@ public class AppiumBase extends TestBase {
 			}
 		}*/
 	    
-	    protected Boolean isAndroid()
+		public Boolean isAndroid()
 	    {
 	    	return osType==OSType.ANDROID;
 	    }
 	    
 	    //This should get overridden in our derived data agnostic classes
 	    //leaving empty here as if empty it just uses TestNG default
-	    protected String getWindTunnelPersona(){
+		public String getWindTunnelPersona(){
 	    	return "";
 	    }
 }
