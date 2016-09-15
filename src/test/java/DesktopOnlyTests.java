@@ -140,7 +140,6 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 			Boolean resultBool = false;
 			
 			//deal with popup after signin
-			//there is a developer mode extension popup we need to dismiss
 			Map<String, Object> savePopup = new HashMap<>();
 			savePopup.put("content", "Do you want Google Chrome");
 			savePopup.put("screen.top", "0%");
@@ -159,26 +158,6 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 				dismissSave.put("screen.left", "71%");
 				dismissSave.put("screen.width", "29%");
 				driver.executeScript("mobile:button-text:click", dismissSave);
-			}
-			
-			Map<String, Object> devPopup = new HashMap<>();
-			devPopup.put("content", "developer mode to stay safe");
-			devPopup.put("screen.top", "0%");
-			devPopup.put("screen.height", "31%");
-			devPopup.put("screen.left", "56%");
-			devPopup.put("screen.width", "44%");
-			Object devResult = driver.executeScript("mobile:text:find", devPopup);
-			resultBool = Boolean.valueOf(devResult.toString());
-			
-			if(resultBool) //found the developer ext mode popup
-			{
-				Map<String, Object> dismissDevPopup = new HashMap<>();
-				dismissDevPopup.put("label", "Cancel");
-				dismissDevPopup.put("screen.top", "0%");
-				dismissDevPopup.put("screen.height", "28%");
-				dismissDevPopup.put("screen.left", "63%");
-				dismissDevPopup.put("screen.width", "37%");
-				driver.executeScript("mobile:button-text:click", dismissDevPopup);
 			}
 		}
 		

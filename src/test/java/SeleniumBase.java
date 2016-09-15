@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.DriverCommand;
 import org.openqa.selenium.remote.RemoteExecuteMethod;
@@ -122,9 +123,12 @@ public class SeleniumBase extends TestBase {
 					capabilities.setCapability("platformName", "Windows");
 					capabilities.setCapability("platformVersion", "8.1");
 					capabilities.setCapability("browserName", "Chrome");
-					capabilities.setCapability("browserVersion", "52");
+					capabilities.setCapability("browserVersion", "53");
 					capabilities.setCapability("resolution", "1440x900");
 					capabilities.setCapability("location", "US East");
+					ChromeOptions options = new ChromeOptions();
+				    options.addArguments("--disable-extensions");
+				    capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 					isMobile = false;
 					useWindTunnel = false;
 					break;
@@ -136,6 +140,9 @@ public class SeleniumBase extends TestBase {
 					capabilities.setCapability("browserVersion", "beta");
 					capabilities.setCapability("resolution", "1920x1080");
 					capabilities.setCapability("location", "US East");
+					ChromeOptions betaOptions = new ChromeOptions();
+				    betaOptions.addArguments("--disable-extensions");
+				    capabilities.setCapability(ChromeOptions.CAPABILITY, betaOptions);
 					isMobile = false;
 					useWindTunnel = false;
 					
