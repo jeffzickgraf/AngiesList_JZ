@@ -51,6 +51,16 @@ public class VerifySearchTests extends AngiesListSeleniumBase {
 					reportiumClient.testStop(TestResultFactory.createFailure("Test stop failure.", e));
 				}				
 			}
+			catch (AssertionError ae)
+			{
+				takeSafeScreenshot();
+				System.out.println("Assertion Error: " + ae.getMessage());
+				if(testStarted)
+				{
+					System.out.println("- - testStop hit assertion error");		
+					reportiumClient.testStop(TestResultFactory.createFailure("Test stop failure.", new Exception("Assertion Error: " + ae.getMessage())));
+				}				
+			}
 			catch (Exception ex)
 			{
 				System.out.println(getStackTraceAsString(ex));
@@ -98,6 +108,16 @@ public class VerifySearchTests extends AngiesListSeleniumBase {
 				if(testStarted)
 				{
 					reportiumClient.testStop(TestResultFactory.createFailure("Test stop failure.", e));
+				}				
+			}
+			catch (AssertionError ae)
+			{
+				takeSafeScreenshot();
+				System.out.println("Assertion Error: " + ae.getMessage());
+				if(testStarted)
+				{
+					System.out.println("- - testStop hit assertion error");		
+					reportiumClient.testStop(TestResultFactory.createFailure("Test stop failure.", new Exception("Assertion Error: " + ae.getMessage())));
 				}				
 			}
 			catch (Exception ex)

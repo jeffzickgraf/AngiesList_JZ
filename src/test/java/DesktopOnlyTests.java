@@ -133,8 +133,8 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 			signOutParams.put("inverse", "yes");
 			driver.executeScript("mobile:button-text:click", signOutParams);
 			
-			
-			textCheckpoint("Member Sign In", 25);
+			WebElement signInLabel = driver.findElementByXPath(ALObjects.WebSignInLabel);			
+			Assert.assertTrue(signInLabel != null, "Expected to find Sign In label but did not.");
 		}
 		
 		private void handleChromePopupIfNeeded()

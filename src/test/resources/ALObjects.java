@@ -12,7 +12,7 @@ public class ALObjects {
 	public static final String WebSignInUsername = "//input[@id='email']";
 	public static final String WebSignInPassword = "//input[@id='password']";
 	public static final String WebSignInSubmitButton = "//button[@type='submit']";
-		
+	public static final String WebSignInLabel = "//*[text()[contains(.,'Sign In')]]";	
 	//search
 	public static final String WebSearchInput = "//input[@class='main-nav_autocomplete-input']";
 	
