@@ -100,7 +100,14 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 			WebElement element = driver.findElementByXPath(ALObjects.WebHoverProfile);
 			Actions action  = new Actions(driver);
 			action.moveToElement(element).perform();
-			//action.moveToElement(element.findElement(By.tagName("a"))).perform();
+			action.moveByOffset(10, 10).perform();
+			
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			Map<String, Object> checkPtParams = new HashMap<>();
 			checkPtParams.put("content", "\"Reviews\" \"Purchase\"");

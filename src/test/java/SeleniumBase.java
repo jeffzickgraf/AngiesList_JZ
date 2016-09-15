@@ -121,7 +121,7 @@ public class SeleniumBase extends TestBase {
 					break;			
 				case "Desktop Chrome":
 					capabilities.setCapability("platformName", "Windows");
-					capabilities.setCapability("platformVersion", "8.1");
+					capabilities.setCapability("platformVersion", "7");
 					capabilities.setCapability("browserName", "Chrome");
 					capabilities.setCapability("browserVersion", "53");
 					capabilities.setCapability("resolution", "1440x900");
@@ -135,27 +135,17 @@ public class SeleniumBase extends TestBase {
 				
 				case "Desktop Chrome Beta":
 					capabilities.setCapability("platformName", "Windows");
-					capabilities.setCapability("platformVersion", "8.1");
+					capabilities.setCapability("platformVersion", "7");
 					capabilities.setCapability("browserName", "Chrome");
 					capabilities.setCapability("browserVersion", "beta");
-					capabilities.setCapability("resolution", "1920x1080");
+					capabilities.setCapability("resolution", "1440x900");
 					capabilities.setCapability("location", "US East");
 					ChromeOptions betaOptions = new ChromeOptions();
 				    betaOptions.addArguments("--disable-extensions");
 				    capabilities.setCapability(ChromeOptions.CAPABILITY, betaOptions);
 					isMobile = false;
 					useWindTunnel = false;
-					
-				case "Desktop Win7 IE10":
-					capabilities.setCapability("platformName", "Windows");
-					capabilities.setCapability("platformVersion", "7");
-					capabilities.setCapability("browserName", "Internet Explorer");
-					capabilities.setCapability("browserVersion", "10");
-					capabilities.setCapability("resolution", "1920x1080");
-					capabilities.setCapability("location", "US East");
-					isMobile = false;
-					useWindTunnel = false;
-					break;
+								
 				case "Desktop Win7 IE11":
 					capabilities.setCapability("platformName", "Windows");
 					capabilities.setCapability("platformVersion", "7");

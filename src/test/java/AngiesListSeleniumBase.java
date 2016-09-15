@@ -50,7 +50,7 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 			checkPtParams.put("screen.height", "50%");
 			checkPtParams.put("screen.left", "0%");
 			checkPtParams.put("screen.width", "100%");
-			checkPtParams.put("timeout", 30);;
+			checkPtParams.put("timeout", timeoutInSeconds);;
 			Object result = driver.executeScript("mobile:checkpoint:text", checkPtParams);
 			
 			Boolean resultBool = Boolean.valueOf(result.toString());

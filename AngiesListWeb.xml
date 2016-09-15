@@ -107,21 +107,6 @@
 		</classes>
 	</test>
 	
-	<test name="Galaxy Note Pro">
-		<parameter name="targetEnvironment" value="Galaxy Note Pro" />
-		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Georgia"/>
-		<parameter name="context" value="WEBVIEW"/>
-		<classes>			
-			<class name="test.java.VerifySearchTests">
-				<methods>
-					<include name="categorySearchTest"/>
-					<include name="keywordSearchTest"/>
-				</methods>
-			</class>		
-		</classes>
-	</test>
-	
 	<test name="Galaxy S7 Edge">
 		<parameter name="targetEnvironment" value="Galaxy S7 Edge" />
 		<parameter name="nvProfile" value="none" />
@@ -175,7 +160,13 @@
 		<classes>			
 			<class name="test.java.DesktopOnlyTests">
 				<methods>
-					<include name="verifyHoverTest"/>
+					<include name="verifyHoverTest"/>					
+				</methods>
+			</class>		
+			<class name="test.java.VerifySearchTests">
+				<methods>
+					<include name="categorySearchTest"/>
+					<include name="keywordSearchTest"/>
 				</methods>
 			</class>		
 		</classes>
@@ -194,9 +185,9 @@
 			</class>		
 		</classes>
 	</test> 
-	
-	<test name="Win7 IE 10">
-		<parameter name="targetEnvironment" value="Desktop Win7 IE10" />
+		
+	<test name="Win7 IE 11">
+		<parameter name="targetEnvironment" value="Desktop Win7 IE11" />
 		<parameter name="nvProfile" value="none" />
 		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="WEBVIEW"/>
@@ -207,10 +198,10 @@
 				</methods>
 			</class>		
 		</classes>
-	</test>
+	</test> 
 	
-	<test name="Win7 IE 11">
-		<parameter name="targetEnvironment" value="Desktop Win7 IE11" />
+	<test name="Win 8.1 Firefox">
+		<parameter name="targetEnvironment" value="Desktop Firefox" />
 		<parameter name="nvProfile" value="none" />
 		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="WEBVIEW"/>
