@@ -166,7 +166,7 @@
 			</class>		
 		</classes>
 	</test>
-	-->
+	
 	<test name="Chrome">
 		<parameter name="targetEnvironment" value="Desktop Chrome" />
 		<parameter name="nvProfile" value="none" />
