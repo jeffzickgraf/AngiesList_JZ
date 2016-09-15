@@ -121,20 +121,21 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 			
 			Boolean resultBool = Boolean.valueOf(result.toString());
 			Assert.assertTrue(resultBool, "Expected to see hover items but couldn't find");
-			takeSafeScreenshot();
 			
-			//Click the signout
+			//verify the sign out button
 			Map<String, Object> signOutParams = new HashMap<>();
-			signOutParams.put("label", "Sign Out");
+			signOutParams.put("content", "Sign Out");
 			signOutParams.put("screen.top", "0%");
 			signOutParams.put("screen.height", "50%");
 			signOutParams.put("screen.left", "73%");
 			signOutParams.put("screen.width", "25%");
 			signOutParams.put("inverse", "yes");
-			driver.executeScript("mobile:button-text:click", signOutParams);
+			driver.executeScript("mobile:checkpoint:text", signOutParams);
 			
-			WebElement signInLabel = driver.findElementByXPath(ALObjects.WebSignInLabel);			
-			Assert.assertTrue(signInLabel != null, "Expected to find Sign In label but did not.");
+			Boolean signOutBool = Boolean.valueOf(result.toString());
+			Assert.assertTrue(signOutBool, "Expected to see hover item for Sign Out but couldn't find");
+			takeSafeScreenshot();
+			
 		}
 		
 		private void handleChromePopupIfNeeded()
