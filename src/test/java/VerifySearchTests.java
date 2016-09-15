@@ -30,7 +30,7 @@ public class VerifySearchTests extends AngiesListSeleniumBase {
 				reportiumClient.testStart("AL Category Search", new TestContext());
 				testStarted = true;
 				openALSite();
-				login();
+				login(15);
 				searchAndBasicVerify(searchTerm);
 				
 				if(windTimerFailed)
@@ -79,7 +79,7 @@ public class VerifySearchTests extends AngiesListSeleniumBase {
 				reportiumClient.testStart("AL Keyword Search", new TestContext());
 				testStarted = true;
 				openALSite();
-				login();
+				login(15);
 				searchAndBasicVerify(searchTerm);
 				
 				if(windTimerFailed)

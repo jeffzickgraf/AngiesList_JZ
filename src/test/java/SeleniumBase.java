@@ -20,7 +20,9 @@ import org.openqa.selenium.remote.DriverCommand;
 import org.openqa.selenium.remote.RemoteExecuteMethod;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionNotFoundException;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -57,7 +59,7 @@ public class SeleniumBase extends TestBase {
 		Boolean windTimerFailed = false;
 			
 		@Parameters({ "targetEnvironment", "nvProfile", "context", "windTunnel" })
-		@BeforeTest
+		@BeforeMethod
 		public void beforeTest(String targetEnvironment, String nvProfile, String context, String windTunnel) throws IOException{
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			
@@ -142,7 +144,7 @@ public class SeleniumBase extends TestBase {
 					capabilities.setCapability("platformVersion", "7");
 					capabilities.setCapability("browserName", "Internet Explorer");
 					capabilities.setCapability("browserVersion", "10");
-					capabilities.setCapability("resolution", "1440x900");
+					capabilities.setCapability("resolution", "1920x1080");
 					capabilities.setCapability("location", "US East");
 					isMobile = false;
 					useWindTunnel = false;
@@ -152,7 +154,7 @@ public class SeleniumBase extends TestBase {
 					capabilities.setCapability("platformVersion", "7");
 					capabilities.setCapability("browserName", "Internet Explorer");
 					capabilities.setCapability("browserVersion", "11");
-					capabilities.setCapability("resolution", "1440x900");
+					capabilities.setCapability("resolution", "1920x1080");
 					capabilities.setCapability("location", "US East");
 					isMobile = false;
 					useWindTunnel = false;
@@ -162,7 +164,7 @@ public class SeleniumBase extends TestBase {
 					capabilities.setCapability("platformVersion", "8.1");
 					capabilities.setCapability("browserName", "Firefox");
 					capabilities.setCapability("browserVersion", "47");
-					capabilities.setCapability("resolution", "1440x900");
+					capabilities.setCapability("resolution", "1920x1080");
 					capabilities.setCapability("location", "US East");
 					isMobile = false;
 					useWindTunnel = false;
@@ -291,7 +293,7 @@ public class SeleniumBase extends TestBase {
 	    }
 
 		
-		@AfterTest
+		@AfterMethod
 		protected void closeWebDriver () throws SessionNotFoundException, IOException {
 			// make sure web driver is closed
 			try{

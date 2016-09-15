@@ -1,5 +1,8 @@
 package test.java;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -23,18 +26,41 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 	}
 	
 	@Step("Login")
-	protected void login() throws InterruptedException
+	protected void login(Integer timeoutInSeconds) throws InterruptedException
 	{	
 		WebElement element;
 		
 		reportiumClient.testStep("step: Login");
 		System.out.println("- - Logging In " + getDeviceModel());
 		
-		if(textCheckpoint("Welcome. " + Constants.ALACCOUNTFIRSTNAME, 8))
+		if(isMobile)
 		{
-			System.out.println("- - Already logged in - sending to Log Out " + getDeviceModel());
-			return;
+			if(textCheckpoint("Welcome. " + Constants.ALACCOUNTFIRSTNAME, 8))
+			{
+				System.out.println("- - Already logged in - returning " + getDeviceModel());
+				return;
+			}
 		}
+		else
+		{ 
+			//For desktop - reduce the haystack size
+			Map<String, Object> checkPtParams = new HashMap<>();
+			checkPtParams.put("content", "Welcome. " + Constants.ALACCOUNTFIRSTNAME);
+			checkPtParams.put("screen.top", "0%");
+			checkPtParams.put("screen.height", "50%");
+			checkPtParams.put("screen.left", "0%");
+			checkPtParams.put("screen.width", "100%");
+			checkPtParams.put("timeout", 30);;
+			Object result = driver.executeScript("mobile:checkpoint:text", checkPtParams);
+			
+			Boolean resultBool = Boolean.valueOf(result.toString());
+			if(resultBool)
+			{
+				System.out.println("- - Already logged in - returning " + getDeviceModel());
+				return;
+			}
+		}
+		
 		
 		element = driver.findElementByXPath(ALObjects.WebSignInUsername);
 		element.clear();
@@ -47,7 +73,7 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 		driver.findElementByXPath(ALObjects.WebSignInSubmitButton).click();
 		
 		//verify on post login landing screen
-		Assert.assertTrue(textCheckpoint("Welcome. " + Constants.ALACCOUNTFIRSTNAME, Constants.TEXTCHECKWAIT, true, false),"Expected to be signed in but couldn't find Welcome message.");
+		Assert.assertTrue(textCheckpoint("Welcome. " + Constants.ALACCOUNTFIRSTNAME, timeoutInSeconds, true, false),"Expected to be signed in but couldn't find Welcome message.");
 		takeWindTunnelTimer("Logged In", 8000);
 		takeSafeScreenshot();			
 		softAssert.assertAll();
