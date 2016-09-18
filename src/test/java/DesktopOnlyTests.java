@@ -207,7 +207,7 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 			handleChromePopupIfNeeded();
 
 			String winHandleBefore = driver.getWindowHandle();
-	        
+				
 			Map<String, Object> busCenterParams = new HashMap<>();
 			busCenterParams.put("label", "Visit Business Center");
 			busCenterParams.put("screen.top", "0%");
@@ -230,7 +230,9 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 				if(winHandle != winHandleBefore)
 					driver.switchTo().window(winHandle);
 	        }
-
+			
+			driver.manage().window().maximize();
+			
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
