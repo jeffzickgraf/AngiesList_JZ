@@ -70,6 +70,8 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 		element.clear();
 		element.sendKeys(Constants.ALPASSWORD);
 		
+		Thread.sleep(2000);
+		
 		//getting slow clicks on IE11, lets try VA click
 		if(isMobile)
 		{
