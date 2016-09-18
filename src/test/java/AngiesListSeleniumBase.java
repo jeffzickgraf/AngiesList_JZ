@@ -71,12 +71,19 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 		element.sendKeys(Constants.ALPASSWORD);
 		
 		//getting slow clicks on IE11, lets try VA click
-		//driver.findElementByXPath(ALObjects.WebSignInSubmitButton).click();		
-		Map<String, Object> signOutParams = new HashMap<>();
-		signOutParams.put("label", "Sign In");		
-		signOutParams.put("inverse", "yes");
-		driver.executeScript("mobile:button-text:click", signOutParams);
-				
+		if(isMobile)
+		{
+			driver.findElementByXPath(ALObjects.WebSignInSubmitButton).click();		
+		}
+		else
+		{
+			Map<String, Object> signOutParams = new HashMap<>();
+		
+			signOutParams.put("label", "Sign In");		
+			signOutParams.put("inverse", "yes");
+			driver.executeScript("mobile:button-text:click", signOutParams);
+		}
+		
 		//verify on post login landing screen
 		Assert.assertTrue(textCheckpoint("Welcome. " + Constants.ALACCOUNTFIRSTNAME, timeoutInSeconds, true, false),"Expected to be signed in but couldn't find Welcome message.");
 		takeWindTunnelTimer("Logged In", 8000);
