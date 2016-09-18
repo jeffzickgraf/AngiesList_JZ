@@ -35,7 +35,7 @@
 	<test name="iPhone 5">
 		<parameter name="targetEnvironment" value="iPhone 5" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
+		<parameter name="windTunnel" value="Georgia"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
 			<class name="test.java.VerifySearchTests">
@@ -95,7 +95,7 @@
 	<test name="Android N">
 		<parameter name="targetEnvironment" value="Android N" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
+		<parameter name="windTunnel" value="Georgia"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
 			<class name="test.java.VerifySearchTests">
@@ -125,7 +125,7 @@
 	<test name="Nexus 5">
 		<parameter name="targetEnvironment" value="Nexus 5" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
+		<parameter name="windTunnel" value="Georgia"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
 			<class name="test.java.VerifySearchTests">
@@ -140,7 +140,7 @@
 	<test name="Galaxy S6">
 		<parameter name="targetEnvironment" value="Android Device" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Mary_Ulta_LB"/>
+		<parameter name="windTunnel" value="Georgia"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
 			<class name="test.java.VerifySearchTests">
@@ -160,7 +160,8 @@
 		<classes>			
 			<class name="test.java.DesktopOnlyTests">
 				<methods>
-					<include name="verifyHoverTest"/>					
+					<include name="verifyBusinessCenter"/>
+					<include name="verifyHoverTest"/>			
 				</methods>
 			</class>		
 			<class name="test.java.VerifySearchTests">
@@ -180,6 +181,7 @@
 		<classes>			
 			<class name="test.java.DesktopOnlyTests">
 				<methods>
+					<include name="verifyBusinessCenter"/>
 					<include name="verifyHoverTest"/>
 				</methods>
 			</class>		
@@ -194,7 +196,8 @@
 		<classes>			
 			<class name="test.java.DesktopOnlyTests">
 				<methods>
-					<include name="verifyHoverTest"/>
+					<include name="verifyBusinessCenter"/>
+					<include name="verifyHoverTest"/>					
 				</methods>
 			</class>		
 		</classes>
@@ -207,8 +210,9 @@
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
 			<class name="test.java.DesktopOnlyTests">
-				<methods>
-					<include name="verifyHoverTest"/>
+				<methods>					
+ 					<include name="verifyBusinessCenter"/>
+ 					<include name="verifyHoverTest"/>
 				</methods>
 			</class>		
 		</classes>

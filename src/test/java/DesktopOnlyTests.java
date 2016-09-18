@@ -88,6 +88,67 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 			}
 		}
 		
+		@Parameters({ "context" })
+		@Test
+		public void verifyBusinessCenter(String context) throws Exception {			
+			try{				
+				reportiumClient.testStart("AL Business Center Test", new TestContext());
+				testStarted = true;
+				driver.manage().window().maximize();
+				openALSite();
+				verifyBusinessCenter();
+				
+				if(windTimerFailed)
+				{
+					reportiumClient.testStop(TestResultFactory.createFailure("One or more wind tunnel timer(s) exceeded.", new Exception("Timer exceeded.")));
+				}
+				else
+				{
+					reportiumClient.testStop(TestResultFactory.createSuccess());
+				}
+				
+				System.out.println("- - Test Completed Successfully " + getDeviceModel());		
+			} catch (NoSuchElementException e){
+				takeSafeScreenshot();
+				System.out.println(getStackTraceAsString(e));
+				if(testStarted)
+				{
+					System.out.println("- - testStop hit NSEE");
+					reportiumClient.testStop(TestResultFactory.createFailure("Test stop failure.", e));
+				}				
+			}
+			catch (AssertionError ae)
+			{
+				takeSafeScreenshot();
+				System.out.println("Assertion Error: " + ae.getMessage());
+				if(testStarted)
+				{
+					System.out.println("- - testStop hit assertion error");		
+					reportiumClient.testStop(TestResultFactory.createFailure("Test stop failure.", new Exception("Assertion Error: " + ae.getMessage())));
+				}				
+			}
+			catch (Exception ex)
+			{
+				System.out.println(getStackTraceAsString(ex));
+				if(testStarted)
+				{
+					System.out.println("- - testStop hit general ex");		
+					reportiumClient.testStop(TestResultFactory.createFailure("Test stop failure.", ex));
+				}				
+			}
+			finally { 
+				try
+				{ 
+					testTearDown(context);
+				}
+				catch(Exception ex) 
+				{
+					System.out.println("Failure in testTearDown");
+				}
+			}
+		}
+		
+		
 		
 		@Step("Verify Hover")
 		protected void verifyHover()
@@ -134,6 +195,92 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 			
 			Boolean signOutBool = Boolean.valueOf(result.toString());
 			Assert.assertTrue(signOutBool, "Expected to see hover item for Sign Out but couldn't find");
+			takeSafeScreenshot();			
+		}
+		
+		@Step("Verify Business Center")
+		protected void verifyBusinessCenter()
+		{	
+			reportiumClient.testStep("step: Verify Business Center");
+			System.out.println("- - Verify Business Center " + getDeviceModel());
+			
+			handleChromePopupIfNeeded();
+
+			String winHandleBefore = driver.getWindowHandle();
+	        
+			Map<String, Object> busCenterParams = new HashMap<>();
+			busCenterParams.put("label", "Visit Business Center");
+			busCenterParams.put("screen.top", "0%");
+			busCenterParams.put("screen.height", "30%");
+			busCenterParams.put("screen.left", "60%");
+			busCenterParams.put("screen.width", "40%");
+			busCenterParams.put("timeout", 40);
+			busCenterParams.put("inverse", "yes");
+			driver.executeScript("mobile:button-text:click", busCenterParams);
+	
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			for(String winHandle : driver.getWindowHandles()){
+	            
+				if(winHandle != winHandleBefore)
+					driver.switchTo().window(winHandle);
+	        }
+
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			//verify the top links are on the page
+			Map<String, Object> checkPtParams = new HashMap<>();
+			checkPtParams.put("content", "\"How It Works\" \"Testimonials\" \"News\" \"LeadFeed\" \"Contact Us\" ");
+			checkPtParams.put("screen.top", "0%");
+			checkPtParams.put("screen.height", "30%");
+			checkPtParams.put("screen.left", "30%");
+			checkPtParams.put("screen.width", "70%");
+			checkPtParams.put("timeout", 40);
+			checkPtParams.put("target", "all");
+			busCenterParams.put("inverse", "yes");
+			Object result = driver.executeScript("mobile:checkpoint:text", checkPtParams);
+			
+			Boolean busLinksBool = Boolean.valueOf(result.toString());
+			Assert.assertTrue(busLinksBool, "Expected to see Business Center Links but couldn't find");
+			takeSafeScreenshot();
+			
+			//verify the middle links are on the page
+			Map<String, Object> claimParams = new HashMap<>();
+			claimParams.put("content", "Claim Your Profile");
+			claimParams.put("screen.top", "40%");
+			claimParams.put("screen.height", "34%");
+			claimParams.put("screen.left", "26%");
+			claimParams.put("screen.width", "52%");
+			claimParams.put("timeout", 40);
+			result = driver.executeScript("mobile:checkpoint:text", claimParams);
+			
+			
+			Boolean claimLinkBool = Boolean.valueOf(result.toString());
+			Assert.assertTrue(claimLinkBool, "Expected to see Claim Your Profile but couldn't find");
+			
+			//Now for Sign In			
+			Map<String, Object> signInParams = new HashMap<>();
+			signInParams.put("content", "Sign In >");
+			signInParams.put("inverse", "yes");
+			signInParams.put("screen.top", "27%");
+			signInParams.put("screen.height", "40%");
+			signInParams.put("screen.left", "29%");
+			signInParams.put("screen.width", "43%");
+			result = driver.executeScript("mobile:checkpoint:text", signInParams);
+			
+			Boolean signInLinkBool = Boolean.valueOf(result.toString());
+			Assert.assertTrue(signInLinkBool, "Expected to see Sign In Link but couldn't find");
+			
 			takeSafeScreenshot();
 			
 		}
