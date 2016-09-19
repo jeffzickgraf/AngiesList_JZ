@@ -337,6 +337,18 @@ public class AppiumBase extends TestBase {
 			Boolean resultBool = Boolean.valueOf(result.toString());
 			perfectoCommand.clear();
 			return resultBool;
+		}
+		
+		public Boolean textCheckpoint(String textToFind, Integer timeout, Boolean inverseSelection) {
+			perfectoCommand.clear();
+			perfectoCommand.put("content", textToFind);
+			perfectoCommand.put("timeout", timeout);
+			if(inverseSelection)
+				perfectoCommand.put("inverse", "yes");
+			Object result = driver.executeScript("mobile:checkpoint:text", perfectoCommand);
+			Boolean resultBool = Boolean.valueOf(result.toString());
+			perfectoCommand.clear();
+			return resultBool;
 		}	
 		
 		public Boolean textCheckpointWithScroll(String textToFind) {

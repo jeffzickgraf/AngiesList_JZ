@@ -4,6 +4,19 @@ public class ALObjects {
 
 	//Native objects
 	
+	//Sign In
+	public static final String NativeSignInLink = "//*[@resource-id='com.angieslist.android.activity:id/button_sign_in'] | //*[@label='Sign In'] ";
+	public static final String NativeUsername = "//*[@resource-id='com.angieslist.android.activity:id/email_input'] | //*[@label='Email']";
+	public static final String NativePassword = "//*[@resource-id='com.angieslist.android.activity:id/password_input'] | //*[@label='Password']";
+	public static final String NativeSignInButton = "//*[@resource-id='com.angieslist.android.activity:id/sign_in_button']| //*[@label='Sign In Submit']";
+	
+	//
+	public static final String NativeSearchtheList = "//*[@text='Search the List'] | //*[@label='Search the List']";
+	public static final String NativePlumbing = "//*[@text='Plumbing']| //*[@label='Plumbing']";
+	public static final String NativeChangeLocationLink = "//*[@resource-id='com.angieslist.android.activity:id/action_location'] | //*[@label='Address Bar Button'] ";
+	public static final String NativeUseCurrentLocation = "//*[@resource-id='com.angieslist.android.activity:id/use_current_location_btn'] | //*[@label='Use Current Location']";
+	
+	
 	
 	//Web objects
 	
