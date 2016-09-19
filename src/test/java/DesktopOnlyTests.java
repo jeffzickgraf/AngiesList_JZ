@@ -35,12 +35,12 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 				testStarted = true;
 				driver.manage().window().maximize();
 				openALSite();
-				login(35);
+				login(40);
 				verifyHover();
 				
 				if(windTimerFailed)
 				{
-					reportiumClient.testStop(TestResultFactory.createFailure("One or more wind tunnel timer(s) exceeded.", new Exception("Timer exceeded.")));
+					reportiumClient.testStop(TestResultFactory.createFailure("One or more wind tunnel timer(s) exceeded.", new Exception("Timer exceeded.")));									
 				}
 				else
 				{

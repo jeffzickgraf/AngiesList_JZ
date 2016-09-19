@@ -151,7 +151,7 @@ public class SeleniumBase extends TestBase {
 					capabilities.setCapability("platformVersion", "7");
 					capabilities.setCapability("browserName", "Internet Explorer");
 					capabilities.setCapability("browserVersion", "11");
-					capabilities.setCapability("resolution", "1920x1080");
+					capabilities.setCapability("resolution", "1440x900");
 					capabilities.setCapability("location", "US East");
 					isMobile = false;
 					useWindTunnel = false;
