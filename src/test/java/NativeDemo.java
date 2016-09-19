@@ -1,6 +1,7 @@
 package test.java;
 
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.springframework.util.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -86,8 +87,8 @@ public class NativeDemo extends AppiumBase {
 		driver.findElementByXPath(ALObjects.NativePassword).sendKeys(Constants.ALPASSWORD);
 		driver.findElementByXPath(ALObjects.NativeSignInButton).click();
 		
-		Assert.isTrue(textCheckpoint("Search the List", 15), "Expected to be logged in and see Search the List");
-		
+		WebElement element = driver.findElementByXPath(ALObjects.NativeSearchtheList);
+		Assert.isTrue(element != null, "Expected to be logged in and see Search the List");		
 	}
 	
 	@Step("Search The List")
