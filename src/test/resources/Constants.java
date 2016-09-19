@@ -7,7 +7,7 @@ public class Constants {
 	public static final String BUILDNUMBER = System.getProperty("BuildNumber");
 	public static final String HOST = "demo.perfectomobile.com";
 	public static final Integer IMPLICIT_WAIT = 15;
-	public static final String APP_NAME = "AngiesList";
+	public static final String APP_NAME = "Angie's List";
 	public static final String ALUSERNAME = System.getProperty("ALUsername");
 	public static final String ALPASSWORD = System.getProperty("ALPassword");
 	public static final String ALACCOUNTFULLNAME = "Jeff Zickgraf";
