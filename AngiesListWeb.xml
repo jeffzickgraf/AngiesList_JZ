@@ -5,7 +5,7 @@
 	<test name="iPhone 6s">
 		<parameter name="targetEnvironment" value="iPhone 6s" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Lisa"/>
+		<parameter name="windTunnel" value="Lisa_jz"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>
 			<class name="test.java.VerifySearchTests">
@@ -80,7 +80,7 @@
 	 <test name="iPad Mini">
 		<parameter name="targetEnvironment" value="iPad Mini" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Lisa"/>
+		<parameter name="windTunnel" value="Lisa_jz"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
 			<class name="test.java.VerifySearchTests">
