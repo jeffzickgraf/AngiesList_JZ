@@ -86,7 +86,7 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 			signInParams.put("screen.left", "10%");
 			signInParams.put("screen.width", "70%");
 			signInParams.put("inverse", "yes");
-			driver.executeScript("mobile:button-text:click", signOutParams);
+			driver.executeScript("mobile:button-text:click", signInParams);
 		}
 		
 		//verify on post login landing screen

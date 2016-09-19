@@ -217,13 +217,15 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 			busCenterParams.put("timeout", 40);
 			busCenterParams.put("inverse", "yes");
 			driver.executeScript("mobile:button-text:click", busCenterParams);
-	
+		
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+			
+			driver.close();
 			
 			for(String winHandle : driver.getWindowHandles()){
 	            
@@ -232,14 +234,14 @@ public class DesktopOnlyTests extends AngiesListSeleniumBase {
 	        }
 			
 			driver.manage().window().maximize();
-			
+	
 			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
+				Thread.sleep(3000);
+			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				e1.printStackTrace();
 			}
-			
+		
 			//verify the top links are on the page
 			Map<String, Object> checkPtParams = new HashMap<>();
 			checkPtParams.put("content", "\"How It Works\" \"Testimonials\" \"News\" \"LeadFeed\" \"Contact Us\" ");
