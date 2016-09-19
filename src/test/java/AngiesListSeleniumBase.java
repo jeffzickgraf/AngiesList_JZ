@@ -32,7 +32,7 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 		
 		reportiumClient.testStep("step: Login");
 		System.out.println("- - Logging In " + getDeviceModel());
-		
+				
 		if(isMobile)
 		{
 			if(textCheckpoint("Welcome. " + Constants.ALACCOUNTFIRSTNAME, 8))
@@ -78,11 +78,14 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 			driver.findElementByXPath(ALObjects.WebSignInSubmitButton).click();		
 		}
 		else
-		{
-			Map<String, Object> signOutParams = new HashMap<>();
-		
-			signOutParams.put("label", "Sign In");		
-			signOutParams.put("inverse", "yes");
+		{	
+			Map<String, Object> signInParams = new HashMap<>();
+			signInParams.put("label", "Sign In");	
+			signInParams.put("screen.top", "35%");
+			signInParams.put("screen.height", "48%");
+			signInParams.put("screen.left", "10%");
+			signInParams.put("screen.width", "70%");
+			signInParams.put("inverse", "yes");
 			driver.executeScript("mobile:button-text:click", signOutParams);
 		}
 		
@@ -100,6 +103,14 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 		System.out.println("- - Opening URL " + getDeviceModel());
 		driver.get("https://member.angieslist.com/member");
 		takeSafeScreenshot();
+		
+		//Give a few seconds to breath here before we start checking the page
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

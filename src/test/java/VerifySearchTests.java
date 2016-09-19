@@ -146,6 +146,31 @@ public class VerifySearchTests extends AngiesListSeleniumBase {
 			reportiumClient.testStep("step: Search with Basic Verify");
 			System.out.println("- - Searching " + getDeviceModel());
 			
+			if(isMobile)
+			{
+				if(isTablet)
+				{
+					rotateDevice(Constants.Rotation.PORTRAIT);
+				}
+				else{
+					rotateDevice(Constants.Rotation.LANDSCAPE);
+				}
+			}
+			
+			takeSafeScreenshot();
+						
+			//revert back
+			if(isMobile)
+			{
+				if(isTablet)
+				{
+					rotateDevice(Constants.Rotation.LANDSCAPE);
+				}
+				else{
+					rotateDevice(Constants.Rotation.PORTRAIT);
+				}
+			}
+						
 			driver.findElementByXPath(ALObjects.WebSearchInput).sendKeys(searchText);
 			driver.findElementByXPath(ALObjects.WebSearchInput).sendKeys(Keys.ENTER);
 			
