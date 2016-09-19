@@ -95,7 +95,7 @@ public class SeleniumBase extends TestBase {
 				case "iPad Mini":
 					isTablet = true;
 					capabilities.setCapability("platformName", "iOS");
-					capabilities.setCapability("deviceName", "59755674D0CCBC97A39C07E70527BD6B88B8ED79"); //shared mini
+					capabilities.setCapability("deviceName", "A7493312BB4627B1F1D79F6426581A84AE273F9C"); //shared mini
 					break;
 				case "Android N":
 					isTablet = true;

@@ -76,7 +76,7 @@ public class AppiumBase extends TestBase {
 					break;
 				case "iPad Mini":
 					capabilities.setCapability("platformName", "iOS");
-					capabilities.setCapability("deviceName", "59755674D0CCBC97A39C07E70527BD6B88B8ED79"); //shared mini
+					capabilities.setCapability("deviceName", "A7493312BB4627B1F1D79F6426581A84AE273F9C"); //shared mini
 					break;
 				case "Android N":
 					capabilities.setCapability("platformName","Android");
