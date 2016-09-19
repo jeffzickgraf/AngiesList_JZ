@@ -3,6 +3,6 @@
 <suite name="AngiesList">
 	<suite-files>	  		   
 	  	<suite-file path="AngiesListNative.xml"	/>
-	  	<suite-file path="AngiesListWeb.xml"	/>
+	  	<!-- <suite-file path="AngiesListWeb.xml"	/> -->
 	</suite-files>
 </suite> 

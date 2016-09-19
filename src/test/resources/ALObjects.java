@@ -15,7 +15,7 @@ public class ALObjects {
 	public static final String NativePlumbing = "//*[@text='Plumbing']| //*[@label='Plumbing']";
 	public static final String NativeChangeLocationLink = "//*[@resource-id='com.angieslist.android.activity:id/action_location'] | //*[@label='Address Bar Button'] ";
 	public static final String NativeUseCurrentLocation = "//*[@resource-id='com.angieslist.android.activity:id/use_current_location_btn'] | //*[@label='Use Current Location']";
-	
+	public static final String NativePopularCategories = "//*[@text='Popular Categories'] | //*[@label='Popular Categories']";
 	
 	
 	//Web objects

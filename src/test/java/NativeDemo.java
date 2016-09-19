@@ -97,18 +97,20 @@ public class NativeDemo extends AppiumBase {
 		System.out.println("- - Search the List " + getDeviceModel());
 				
 		driver.findElementByXPath(ALObjects.NativeSearchtheList).click();
-		Assert.isTrue(textCheckpoint("Popular Categories", 15, true), "Expected to see Popular Categories");
+		driver.findElementByXPath(ALObjects.NativePopularCategories);
 		driver.findElementByXPath(ALObjects.NativePlumbing).click();
+		Thread.sleep(3000);
 		driver.findElementByXPath(ALObjects.NativeChangeLocationLink).click();
 		driver.findElementByXPath(ALObjects.NativeUseCurrentLocation).click();
 		
 		if(isAndroid())
 		{
-			Assert.isTrue(textCheckpoint("Massachusetts", 20), "Expected to find Massachusetts in results");
+			Assert.isTrue(textCheckpoint("New York", 20), "Expected to find New York in results");
 		}
 		else
 		{
 			Assert.isTrue(textCheckpoint("Columbus", 20), "Expected to find Columbus in results");
-		}			
+		}		
+		takeSafeScreenshot();
 	}
 }

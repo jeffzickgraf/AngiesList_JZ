@@ -4,10 +4,10 @@
 	
 	<!-- Using personal 6 s for omni-channel -->
 	
-	<test name="Ulta Native - iPhone 6s">
+	<test name="AL Native - iPhone 6s">
 		<parameter name="targetEnvironment" value="iPhone 6s" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="windTunnel" value="Lisa_jz"/>
 		<parameter name="context" value="NATIVE_APP"/>
 		<classes>			
 			<class name="test.java.NativeDemo">
@@ -18,7 +18,7 @@
 		</classes>
 	</test>
 		
-	<test name="Ulta Native  - iPad Mini">
+	<test name="AL Native  - iPad Mini">
 		<parameter name="targetEnvironment" value="iPad Mini" />
 		<parameter name="nvProfile" value="none" />
 		<parameter name="windTunnel" value="Lisa_jz"/>
@@ -32,7 +32,7 @@
 		</classes>
 	</test>	 
 		
-	<test name="Ulta Native - Galaxy S6">
+	<test name="AL Native - Galaxy S6">
 		<parameter name="targetEnvironment" value="Galaxy S6" />
 		<parameter name="nvProfile" value="none" />
 		<parameter name="context" value="NATIVE_APP"/>
