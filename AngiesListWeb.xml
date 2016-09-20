@@ -194,17 +194,11 @@
 					<include name="verifyBusinessCenter"/>
 					<include name="verifyHoverTest"/>			
 				</methods>
-			</class>		
-			<class name="test.java.VerifySearchTests">
-				<methods>
-					<include name="categorySearchTest"/>
-					<include name="keywordSearchTest"/>
-				</methods>
-			</class>		
+			</class>							
 		</classes>
 	</test>
 	
-	<test name="Chrome Beta">
+	<test name="Chrome Beta Bus Center">
 		<parameter name="targetEnvironment" value="Desktop Chrome Beta" />
 		<parameter name="nvProfile" value="none" />
 		<parameter name="windTunnel" value=""/>
@@ -216,6 +210,21 @@
 					<include name="verifyHoverTest"/>
 				</methods>
 			</class>		
+		</classes>
+	</test> 
+	
+	<test name="Chrome Beta Verify Search">
+		<parameter name="targetEnvironment" value="Desktop Chrome Beta" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value=""/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>			
+			<class name="test.java.VerifySearchTests">
+				<methods>
+					<include name="categorySearchTest"/>
+					<include name="keywordSearchTest"/>
+				</methods>
+			</class>
 		</classes>
 	</test> 
 		
