@@ -126,7 +126,7 @@
 	<test name="Android N">
 		<parameter name="targetEnvironment" value="Android N" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value=""/>
+		<parameter name="windTunnel" value="Lisa_jz"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
 			<class name="test.java.VerifySearchTests">
