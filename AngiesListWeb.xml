@@ -118,7 +118,7 @@
 				<methods>
 					<include name="categorySearchTest"/>
 					<include name="keywordSearchTest"/>
-				</methods>ca
+				</methods>
 			</class>		
 		</classes>
 	</test>
