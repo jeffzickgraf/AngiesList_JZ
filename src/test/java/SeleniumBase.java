@@ -32,6 +32,8 @@ import com.perfecto.reportium.client.ReportiumClientFactory;
 import com.perfecto.reportium.model.Job;
 import com.perfecto.reportium.model.PerfectoExecutionContext;
 import com.perfecto.reportium.model.Project;
+import com.perfecto.reportium.test.TestContext;
+import com.perfecto.reportium.test.result.TestResultFactory;
 import com.perfectomobile.httpclient.Credentials;
 import com.perfectomobile.httpclient.HttpClientException;
 import com.perfectomobile.httpclient.MediaType;
@@ -236,6 +238,14 @@ public class SeleniumBase extends TestBase {
 				}
 			} catch (Exception e) {
 				System.out.println("Failed to get driver for " + targetEnvironment + " stacktrace: " + getStackTraceAsString(e));
+				
+				if(reportiumClient != null)
+				{
+					reportiumClient.testStart("AL Web - Start Failure", new TestContext());
+					reportiumClient.testStop(TestResultFactory.createFailure("Test driver stop failure.", e));
+				}
+				
+				throw e;
 			}				
 		}
 		
