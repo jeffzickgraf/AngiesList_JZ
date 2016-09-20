@@ -2,7 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="AngiesList">
 	<suite-files>	  		   
-		<suite-file path="AngiesListWeb.xml"/> 
-	  	<!-- <suite-file path="AngiesListNative.xml"	/>	 -->	  	 
+	  	<suite-file path="AngiesListNative.xml"	/>  	 
 	</suite-files>
 </suite> 
