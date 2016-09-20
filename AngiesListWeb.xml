@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="15" name="AL Web" parallel="tests">
+<suite thread-count="20" name="AL Web" parallel="tests">
 	
 	<test name="iPhone 6s">
 		<parameter name="targetEnvironment" value="iPhone 6s" />
