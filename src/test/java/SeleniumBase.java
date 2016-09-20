@@ -140,7 +140,7 @@ public class SeleniumBase extends TestBase {
 				
 				case "Desktop Chrome Beta":
 					capabilities.setCapability("platformName", "Windows");
-					capabilities.setCapability("platformVersion", "7");
+					capabilities.setCapability("platformVersion", "8.1");
 					capabilities.setCapability("browserName", "Chrome");
 					capabilities.setCapability("browserVersion", "beta");
 					capabilities.setCapability("resolution", "1440x900");
