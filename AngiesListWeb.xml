@@ -48,7 +48,7 @@
 		</classes>
 	</test>
 
- 	<test name="iPhone 6 Plus">
+ <!-- 	<test name="iPhone 6 Plus">
 		<parameter name="targetEnvironment" value="iPhone 6 Plus" />
 		<parameter name="nvProfile" value="none" />
 		<parameter name="windTunnel" value="Georgia"/>
@@ -62,7 +62,7 @@
 			</class>
 		</classes>
 	</test>	
-		
+ -->		
 	<test name="iPhone 5">
 		<parameter name="targetEnvironment" value="iPhone 5" />
 		<parameter name="nvProfile" value="none" />
