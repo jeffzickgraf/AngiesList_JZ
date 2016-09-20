@@ -123,7 +123,21 @@ public class SeleniumBase extends TestBase {
 				case "Galaxy S6":
 					capabilities.setCapability("platformName","Android");				
 					capabilities.setCapability("deviceName", "05157DF53B1BA11F"); //Jeffs galaxy 6
-					break;			
+					break;		
+					
+				case "Desktop Chrome Beta":
+					capabilities.setCapability("platformName", "Windows");
+					capabilities.setCapability("platformVersion", "8.1");
+					capabilities.setCapability("browserName", "Chrome");
+					capabilities.setCapability("browserVersion", "beta");
+					capabilities.setCapability("resolution", "1440x900");
+					capabilities.setCapability("location", "US East");
+					ChromeOptions betaOptions = new ChromeOptions();
+				    betaOptions.addArguments("--disable-extensions");
+				    capabilities.setCapability(ChromeOptions.CAPABILITY, betaOptions);
+					isMobile = false;
+					useWindTunnel = false;
+					break;
 				case "Desktop Chrome":
 					capabilities.setCapability("platformName", "Windows");
 					capabilities.setCapability("platformVersion", "7");
@@ -137,20 +151,7 @@ public class SeleniumBase extends TestBase {
 					isMobile = false;
 					useWindTunnel = false;
 					break;
-				
-				case "Desktop Chrome Beta":
-					capabilities.setCapability("platformName", "Windows");
-					capabilities.setCapability("platformVersion", "8.1");
-					capabilities.setCapability("browserName", "Chrome");
-					capabilities.setCapability("browserVersion", "beta");
-					capabilities.setCapability("resolution", "1440x900");
-					capabilities.setCapability("location", "US East");
-					ChromeOptions betaOptions = new ChromeOptions();
-				    betaOptions.addArguments("--disable-extensions");
-				    capabilities.setCapability(ChromeOptions.CAPABILITY, betaOptions);
-					isMobile = false;
-					useWindTunnel = false;
-								
+											
 				case "Desktop Win7 IE11":
 					capabilities.setCapability("platformName", "Windows");
 					capabilities.setCapability("platformVersion", "7");
