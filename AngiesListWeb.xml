@@ -81,7 +81,7 @@
 	<test name="iPad Air 2">
 		<parameter name="targetEnvironment" value="iPad Air 2" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="windTunnel" value="Lisa_jz"/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
 			<class name="test.java.VerifySearchTests">
