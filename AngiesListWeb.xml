@@ -17,6 +17,37 @@
 		</classes>
 	</test>
 
+
+	<test name="iPhone 7 Plus">
+		<parameter name="targetEnvironment" value="iPhone 7 Plus" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Lisa_jz"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>
+			<class name="test.java.VerifySearchTests">
+				<methods>
+					<include name="categorySearchTest"/>
+					<include name="keywordSearchTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="iPhone 7">
+		<parameter name="targetEnvironment" value="iPhone 7" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value="Lisa_jz"/>
+		<parameter name="context" value="WEBVIEW"/>
+		<classes>
+			<class name="test.java.VerifySearchTests">
+				<methods>
+					<include name="categorySearchTest"/>
+					<include name="keywordSearchTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
  	<test name="iPhone 6 Plus">
 		<parameter name="targetEnvironment" value="iPhone 6 Plus" />
 		<parameter name="nvProfile" value="none" />
@@ -95,7 +126,7 @@
 	<test name="Android N">
 		<parameter name="targetEnvironment" value="Android N" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Georgia"/>
+		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="WEBVIEW"/>
 		<classes>			
 			<class name="test.java.VerifySearchTests">

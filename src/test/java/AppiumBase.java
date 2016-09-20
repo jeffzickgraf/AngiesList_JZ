@@ -54,9 +54,13 @@ public class AppiumBase extends TestBase {
 					capabilities.setCapability("platformName", "iOS");
 					capabilities.setCapability("deviceName", "AA7EEEAADD92242C665D2807B538BDACFAA5A0DB"); //Jeff iPhone
 					break;
-				case "iPhone 6s shared":
+				case "iPhone 7 Plus":
 					capabilities.setCapability("platformName", "iOS");
-					capabilities.setCapability("deviceName", "E20DE68F3D3554B90AB5503E57A28BE0270AF70D"); // iPhone 6s shared
+					capabilities.setCapability("deviceName", "3223B53D8B0B789E293ECB7F94E5508DAAB4CF9A");
+					break;	
+				case "iPhone 7":
+					capabilities.setCapability("platformName", "iOS");
+					capabilities.setCapability("deviceName", "6A0C982D55A212AE7FFBECFB66540F33BE4CFF16");
 					break;	
 				case "iPhone 6 Plus":
 					capabilities.setCapability("platformName", "iOS");
@@ -162,6 +166,11 @@ public class AppiumBase extends TestBase {
 			} catch (Exception e) {
 				System.out.println("Error trying to acquire driver for device " + targetEnvironment + " Error: " + getStackTraceAsString(e));	
 			}		
+						
+			Map locationParams = new HashMap();
+			locationParams.put("address", "8 E Long St, Columbus, OH 43215");
+			driver.executeScript("mobile:location:set", locationParams);
+			
 			
 			try
 			{
@@ -171,7 +180,8 @@ public class AppiumBase extends TestBase {
 				openApp(context);
 				
 				Thread.sleep(3000);
-				//if the "Rate AL" popup appears, dismiss
+				/*
+				 * //if the "Rate AL" popup appears, dismiss
 				if(isAndroid() && textCheckpoint("Rate Angies List", 6))
 				{
 					buttonClick("No Thanks", false, false);
@@ -182,7 +192,7 @@ public class AppiumBase extends TestBase {
 					{
 						buttonClick("No, Thanks", false, false);
 					}
-				}				
+				}			*/	
 			}
 			catch(Exception ex)
 			{
@@ -252,6 +262,9 @@ public class AppiumBase extends TestBase {
 						Map<String, Object> params2 = new HashMap<>();
 						driver.executeScript("mobile:vnetwork:stop", params2);			
 					}
+					
+					Map locationParams = new HashMap();
+					driver.executeScript("mobile:location:reset", locationParams);
 					
 					driver.close();
 					driverWasClosed = true;
@@ -387,13 +400,17 @@ public class AppiumBase extends TestBase {
 			return stringWriter.toString();
 		}
 
-		
+		String deviceModel = "";
 		public String getDeviceModel()
 		{
-			Map params = new HashMap<>();         
-			params.put("property", "model");
-			String properties = (String) driver.executeScript("mobile:handset:info", params);
-			return properties + " Native";
+			if(deviceModel.isEmpty())
+			{
+				Map params = new HashMap<>();         
+				params.put("property", "model");
+				String properties = (String) driver.executeScript("mobile:handset:info", params);
+				deviceModel = properties + " Native";
+			}
+			return deviceModel;			
 		}
 		
 		// Wind Tunnel: Gets the user experience (UX) timer

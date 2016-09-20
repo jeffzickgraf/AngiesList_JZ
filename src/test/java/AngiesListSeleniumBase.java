@@ -35,7 +35,7 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 				
 		if(isMobile)
 		{
-			if(textCheckpoint("Welcome. " + Constants.ALACCOUNTFIRSTNAME, 15))
+			if(textCheckpoint("Welcome. " + Constants.ALACCOUNTFIRSTNAME, 8))
 			{
 				System.out.println("- - Already logged in - returning " + getDeviceModel());
 				return;
@@ -50,7 +50,7 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 			checkPtParams.put("screen.height", "45%");
 			checkPtParams.put("screen.left", "20%");
 			checkPtParams.put("screen.width", "60%");
-			checkPtParams.put("timeout", timeoutInSeconds);;
+			checkPtParams.put("timeout", timeoutInSeconds);
 			Object result = driver.executeScript("mobile:checkpoint:text", checkPtParams);
 			
 			Boolean resultBool = Boolean.valueOf(result.toString());

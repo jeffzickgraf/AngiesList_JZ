@@ -2,12 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="11" name="AL Native" parallel="tests">
 	
-	<!-- Using personal 6 s for omni-channel -->
-	
 	<test name="AL Native - iPhone 6s">
 		<parameter name="targetEnvironment" value="iPhone 6s" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Lisa_jz"/>
+		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="NATIVE_APP"/>
 		<classes>			
 			<class name="test.java.NativeDemo">
@@ -17,11 +15,67 @@
 			</class>
 		</classes>
 	</test>
+
+	<test name="AL Native - iPhone 7 Plus">
+		<parameter name="targetEnvironment" value="iPhone 7 Plus" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value=""/>
+		<parameter name="context" value="NATIVE_APP"/>
+		<classes>			
+			<class name="test.java.NativeDemo">
+			    <methods>
+			        <include name="test" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>
+
+	<test name="AL Native - iPhone 7">
+		<parameter name="targetEnvironment" value="iPhone 7" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="windTunnel" value=""/>
+		<parameter name="context" value="NATIVE_APP"/>
+		<classes>			
+			<class name="test.java.NativeDemo">
+			    <methods>
+			        <include name="test" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>
+
+	<test name="AL Native - Galaxy S6">
+		<parameter name="targetEnvironment" value="Galaxy S6" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="context" value="NATIVE_APP"/>
+		<parameter name="windTunnel" value=""/>
+		<classes>		
+			<class name="test.java.NativeDemo">
+			    <methods>
+			        <include name="test" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test>
+	
+	<test name="AL Native - Android N">
+		<parameter name="targetEnvironment" value="Android N" />
+		<parameter name="nvProfile" value="none" />
+		<parameter name="context" value="NATIVE_APP"/>
+		<parameter name="windTunnel" value=""/>
+		<classes>		
+			<class name="test.java.NativeDemo">
+			    <methods>
+			        <include name="test" />
+			    </methods>			    
+			</class>
+		</classes>
+	</test> 
 		
 	<test name="AL Native  - iPad Mini">
 		<parameter name="targetEnvironment" value="iPad Mini" />
 		<parameter name="nvProfile" value="none" />
-		<parameter name="windTunnel" value="Lisa_jz"/>
+		<parameter name="windTunnel" value=""/>
 		<parameter name="context" value="NATIVE_APP"/>
 		<classes>
 			<class name="test.java.NativeDemo">
@@ -32,19 +86,7 @@
 		</classes>
 	</test>	 
 		
-	<test name="AL Native - Galaxy S6">
-		<parameter name="targetEnvironment" value="Galaxy S6" />
-		<parameter name="nvProfile" value="none" />
-		<parameter name="context" value="NATIVE_APP"/>
-		<parameter name="windTunnel" value="Georgia"/>
-		<classes>		
-			<class name="test.java.NativeDemo">
-			    <methods>
-			        <include name="test" />
-			    </methods>			    
-			</class>
-		</classes>
-	</test> 
+
 
 
 	

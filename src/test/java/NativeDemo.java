@@ -1,5 +1,8 @@
 package test.java;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.springframework.util.Assert;
@@ -75,9 +78,10 @@ public class NativeDemo extends AppiumBase {
 		reportiumClient.testStep("step: Login");
 		System.out.println("- - Login " + getDeviceModel());
 		
-		if(textCheckpoint("Search the List", 10))
+		if(isLoggedIn())
 		{
 			System.out.println("- - Already logged in " + getDeviceModel());
+			takeSafeScreenshot();
 			return;
 		}		
 		
@@ -88,7 +92,8 @@ public class NativeDemo extends AppiumBase {
 		driver.findElementByXPath(ALObjects.NativeSignInButton).click();
 		
 		WebElement element = driver.findElementByXPath(ALObjects.NativeSearchtheList);
-		Assert.isTrue(element != null, "Expected to be logged in and see Search the List");		
+		Assert.isTrue(element != null, "Expected to be logged in and see Search the List");
+		takeSafeScreenshot();
 	}
 	
 	@Step("Search The List")
@@ -106,7 +111,7 @@ public class NativeDemo extends AppiumBase {
 		
 		if(isAndroid())
 		{
-			Assert.isTrue(textCheckpoint("New York", 20), "Expected to find New York in results");
+			Assert.isTrue(textCheckpoint("Columbus", 20), "Expected to find Columbus in results");
 		}
 		else
 		{
@@ -114,4 +119,24 @@ public class NativeDemo extends AppiumBase {
 		}		
 		takeSafeScreenshot();
 	}
+	
+	private Boolean isLoggedIn()
+	{
+		try {
+			Map<String, Object> searchListParams = new HashMap<>();
+			searchListParams.put("content", "Search the List");
+			searchListParams.put("screen.top", "60%");
+			searchListParams.put("screen.height", "40%");
+			searchListParams.put("screen.left", "0%");
+			searchListParams.put("screen.width", "100%");
+			searchListParams.put("timeout", 15);
+			Object resultSearch = driver.executeScript("mobile:checkpoint:text", searchListParams);
+			return Boolean.valueOf(resultSearch.toString());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}				
+		return false;
+	}
+	
 }

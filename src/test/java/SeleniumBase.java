@@ -70,6 +70,14 @@ public class SeleniumBase extends TestBase {
 					capabilities.setCapability("platformName", "iOS");
 					capabilities.setCapability("deviceName", "AA7EEEAADD92242C665D2807B538BDACFAA5A0DB"); //Jeff iPhone
 					break;
+				case "iPhone 7 Plus":
+					capabilities.setCapability("platformName", "iOS");
+					capabilities.setCapability("deviceName", "3223B53D8B0B789E293ECB7F94E5508DAAB4CF9A");
+					break;	
+				case "iPhone 7":
+					capabilities.setCapability("platformName", "iOS");
+					capabilities.setCapability("deviceName", "6A0C982D55A212AE7FFBECFB66540F33BE4CFF16");
+					break;	
 				case "iPhone 6s shared":
 					capabilities.setCapability("platformName", "iOS");
 					capabilities.setCapability("deviceName", "E20DE68F3D3554B90AB5503E57A28BE0270AF70D"); // iPhone 6s shared
@@ -101,11 +109,6 @@ public class SeleniumBase extends TestBase {
 					isTablet = true;
 					capabilities.setCapability("platformName","Android");
 					capabilities.setCapability("deviceName", "HT58ZJT00147");  //tablet
-					break;
-				case "Galaxy Note Pro":
-					isTablet = true;
-					capabilities.setCapability("platformName", "Android");
-					capabilities.setCapability("deviceName", "52003C354EAE122D"); // Galaxy  Note Pro				
 					break;
 				case "Galaxy S7 Edge":
 					capabilities.setCapability("platformName","Android");				
