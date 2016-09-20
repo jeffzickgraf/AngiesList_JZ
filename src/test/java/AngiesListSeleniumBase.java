@@ -86,12 +86,13 @@ public class AngiesListSeleniumBase extends SeleniumBase{
 			signInParams.put("screen.left", "10%");
 			signInParams.put("screen.width", "70%");
 			signInParams.put("inverse", "yes");
+			signInParams.put("timeout", timeoutInSeconds);
 			driver.executeScript("mobile:button-text:click", signInParams);
 		}
 		
 		//verify on post login landing screen
 		Assert.assertTrue(textCheckpoint("Welcome. " + Constants.ALACCOUNTFIRSTNAME, timeoutInSeconds, true, false),"Expected to be signed in but couldn't find Welcome message.");
-		takeWindTunnelTimer("Logged In", 8000);
+		takeWindTunnelTimer("Logged In", 10000);
 		takeSafeScreenshot();			
 		softAssert.assertAll();
 		takeWindTunnelPointOfInterest("Successfully logged in.", WindTunnelUtils.SUCCESS);
